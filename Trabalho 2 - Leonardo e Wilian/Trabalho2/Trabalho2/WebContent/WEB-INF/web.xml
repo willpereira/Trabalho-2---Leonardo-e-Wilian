@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Trabalho2</display-name>
+  <servlet>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>br.uniriotec.pm.view.controle.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>br.uniriotec.pm.view.controle.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>PesquisadorServlet</display-name>
+    <servlet-name>PesquisadorServlet</servlet-name>
+    <servlet-class>br.uniriotec.pm.view.controle.PesquisadorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesquisadorServlet</servlet-name>
+    <url-pattern>/pages/pesquisador/PesquisadorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BaseServlet</display-name>
+    <servlet-name>BaseServlet</servlet-name>
+    <servlet-class>br.uniriotec.pm.view.controle.BaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BaseServlet</servlet-name>
+    <url-pattern>/BaseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PublicacaoServlet</display-name>
+    <servlet-name>PublicacaoServlet</servlet-name>
+    <servlet-class>br.uniriotec.pm.view.controle.PublicacaoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PublicacaoServlet</servlet-name>
+    <url-pattern>/pages/publicacao/PublicacaoServlet</url-pattern>
+  </servlet-mapping>
+   <!-- Define os arquivos de configuracoes XML para o contexto Spring -->   
+<!--   <context-param>   -->
+<!--    <param-name>contextConfigLocation</param-name>   -->
+<!--    <param-value>/WEB-INF/applicationContext.xml</param-value>   -->
+<!--   </context-param>   -->
+   <!-- Inicializa o Spring Web Application Context -->   
+<!--   <listener>   -->
+<!--    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>   -->
+<!--   </listener>   -->
+   <!-- Ativa os escopos web para os beans no Spring -->  
+<!--   <listener>   -->
+<!--    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>   -->
+<!--   </listener>   -->
+   
+</web-app>
