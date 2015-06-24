@@ -1,22 +1,8 @@
 <%@include file="../../_header.jsp" %>
 
-
-	<script type="text/javascript">
-		function validate_form(thisform){
-			with (thisform){
- 				if( (titulo.value == "" || titulo.value == null) && (influencia.value == "" || influencia.value == null) && (Evento.value == "" || Evento.value == null) && (pesquisador.value == "" || pesquisador.value == null)){
- 					alert('Nenhum parâmetro de consulta inserido')
- 					return false;
- 				} 
- 				return true;
-			}
-		}	</script>
-
-	
-
 		<div id="formulario">
 			<h2>Buscar Publicacao</h2>
-			<form action="PublicacaoServlet" onsubmit="return validate_form(this)" method="post">
+			<form action="PublicacaoServlet" name="thisform" onSubmit="validate_form_publicacao(thisform);" method="post">
 			<input type="hidden" name="comando" value="consultar"/>
  				Título: <input type="text" name="titulo"/> *
 				</br><br>

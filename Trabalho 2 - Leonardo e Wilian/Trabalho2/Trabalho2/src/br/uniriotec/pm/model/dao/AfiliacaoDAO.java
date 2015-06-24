@@ -159,6 +159,37 @@ public class AfiliacaoDAO extends BaseDAO<Afiliacao> implements IAfiliacaoDAO{
 			}
 			return ListaAfiliacao;
 			}
+		
+		public List<Afiliacao> consultarAfiliacaoPesq(Long id) throws Exception {
+			Connection connection = conexaoBancoDeDados.criaConexao();
+			String sql = "SELECT * FROM AFILIACAO A WHERE ID_AFILIACAO IN (SELECT ID_AFILIACAO FROM PESQUISADOR_AFILIACAO_POSSUI WHERE ID_PESQUISADOR= ? ) ";
+			PreparedStatement stmt = null;
+			ResultSet rs = null;
+			List<Afiliacao> af= new ArrayList<Afiliacao>();
+			try {
+			stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, id.intValue());
+			rs = stmt.executeQuery();
+			//listaCidades.clear();
+			while (rs.next()) {
+				Afiliacao afiliacao = new Afiliacao();
+				afiliacao.setIdAfiliacao(rs.getInt("id_afiliacao"));
+				afiliacao.setNome(rs.getString("nome_afiliacao"));
+				afiliacao.setComplemento(rs.getString("complemento_af"));
+				afiliacao.setLogradouro(rs.getString("logradouro_af"));
+				afiliacao.setIdCidade(rs.getInt("id_cidade"));
+				afiliacao.setTipo(rs.getString("tipo_af"));
+				afiliacao.setTipo_logradouro(rs.getString("tipo_logradouro_af"));
+				afiliacao.setNumero(rs.getInt("numero_end_af"));
+				af.add(afiliacao);
+			}
+			} catch (SQLException e) {
+			throw e;
+			} finally{
+				connection.close();
+			}
+			return af;
+			}
 	
 		public void setAfiliacao(ResultSet resultSet, Afiliacao afiliacao) throws SQLException{		
 			

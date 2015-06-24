@@ -17,15 +17,6 @@
 	Último Nome: <input type="text" name="ultimo_nome" readonly="true" value="<c:out value="${pesquisador.ultimo_nome}" />">
 	<br /><br />
 	
-	Cidade: <input type="text" name="cidadePesquisador" readonly="true" value="<c:out value="${cidade.nome_cidade}" />">
-	<br /><br /> 
-	
-	Estado: <input type="text" name="estadoPesquisador" readonly="true" value="<c:out value="${cidade.nome_estado}" />">
-	<br /><br /> 
-	
-	Pais: <input type="text" name="paisPesquisador" readonly="true" value="<c:out value="${cidade.nome_pais}" />">
-	<br /><br /> 
-	
 	Tipo de logradouro: <input type="text" name="Tipo_de_Logradouro" readonly="true" value="<c:out value="${pesquisador.tipo_logradouroPesquisador}"/>">
 	<br /><br />
 	

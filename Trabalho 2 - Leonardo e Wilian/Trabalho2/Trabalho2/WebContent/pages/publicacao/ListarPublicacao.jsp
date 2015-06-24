@@ -1,7 +1,7 @@
 <%@include file="../../_header.jsp"%>
 
 <div class="listar">
-	<h2>Lista de publicacoes</h2>
+	<h2>Lista de publicações</h2>
 	<c:if test="${mensagem != null}">
 		<h2><c:out value="${mensagem}" /></h2>
 	</c:if>

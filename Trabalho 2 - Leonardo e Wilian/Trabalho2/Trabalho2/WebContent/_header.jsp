@@ -13,11 +13,11 @@
 
 <head>
 	<link rel="stylesheet" href="/Trabalho2/include/estilo.css" />
+	<script type="text/javascript" src="/Trabalho2/include/script.js"></script>
 	<title>UNIRIO - Trabalho 2</title>
 </head>
 
 <body>
-
 <div id="container">
 	<img class="logo" src="/Trabalho2/include/common/unirioLogo.gif" /> <h1 id="title">Trabalho 2 - Disciplina: Programação Modular 2015.1</h1>
 <div id="banner">

@@ -237,7 +237,7 @@ public class PesquisadorServlet extends BaseServlet {
 			String ultimo_nome=request.getParameter("ultimo_nome");
 			String comando = request.getParameter("comando");
 			
-			if (nome != null && sobrenome != null && ultimo_nome != null) {
+			if ((nome != null && nome != "") && (sobrenome != null && sobrenome != "") && (ultimo_nome != null && ultimo_nome != null)) {
 				
 				Pesquisador pesquisador = PesquisadorDAO.getInstance().consultar(nome,sobrenome,ultimo_nome);
 				request.setAttribute("pesquisador", pesquisador);
@@ -277,7 +277,7 @@ public class PesquisadorServlet extends BaseServlet {
 			String ultimo_nome=request.getParameter("ultimo_nome");
 			String comando = request.getParameter("comando");
 			
-			if (nome != null && sobrenome !=null && ultimo_nome!=null) {
+			if ((nome != null && nome != "") && (sobrenome != null && sobrenome != "") && (ultimo_nome != null && ultimo_nome != null)) {
 				
 				Pesquisador pesquisador = PesquisadorDAO.getInstance().consultar(nome,sobrenome,ultimo_nome);
 				request.setAttribute("pesquisador", pesquisador);
@@ -363,7 +363,8 @@ public class PesquisadorServlet extends BaseServlet {
 			requestDispatcher.forward(request, response);
 			
 		} catch (Exception e) {
-			response.sendRedirect("pesquisadorErroGeral.jsp?tituloPagina=Consultar Pesquisador&mensagem=Erro na consulta de pesquisador! Detalhe: " + e.getMessage());
+
+			response.sendRedirect("pesquisadorErroGeral.jsp?tituloPagina=Consultar Pesquisador&mensagem=Erro na consulta de pesquisador! Detalhe:" + e.getMessage());
 		}
 	}
 	protected void consultarExcluir(HttpServletRequest request,
@@ -387,21 +388,13 @@ public class PesquisadorServlet extends BaseServlet {
 			String sobrenome=request.getParameter("nome_do_meio");
 			String ultimo_nome=request.getParameter("ultimo_nome");
 			
-			if ( nome != null && sobrenome != null && ultimo_nome != null) {
+			if ((nome != null && nome != "") && (sobrenome != null && sobrenome != "") && (ultimo_nome != null && ultimo_nome != null)) {
 				
 				Pesquisador pesquisador = new Pesquisador();
 				pesquisador = PesquisadorDAO.getInstance().consultar(nome,sobrenome,ultimo_nome);
-				Cidade cidade=new Cidade();
-				List<Afiliacao> afiliacoes=new ArrayList<Afiliacao>();
-				Long idPesquisador=  pesquisador.getCodPesquisador().longValue();
+		        
 				
-				cidade = CidadeDAO.getInstance().consultarCidadePesq(idPesquisador);
-				
-				afiliacoes=AfiliacaoDAO.getInstance().consultarAfiliacaoPesquisador(idPesquisador);
 				request.getSession().setAttribute("pesquisador", pesquisador);
-				
-				request.getSession().setAttribute("cidade", cidade);
-				request.getSession().setAttribute("afiliacoes", afiliacoes);
 				
 				requestDispatcher = request.getRequestDispatcher("pesquisadorExibir.jsp");
 				
