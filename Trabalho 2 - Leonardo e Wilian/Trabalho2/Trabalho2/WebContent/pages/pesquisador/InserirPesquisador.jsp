@@ -1,93 +1,4 @@
-<%@include file="../../_header.jsp"%>	
-	<script type="text/javascript">
-		function validate_form(thisform){
-			with (thisform){
-				if( (primeiro_nome.value == "" || primeiro_nome.value == null)){
- 					alert('Campos obrigatórios em branco!')
-					primeiro_nome.focus();
- 					return false;
-				}
-				if( (ultimo_nome.value == "" || ultimo_nome.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					ultimo_nome.focus();
- 					return false;
-				}
-				if( (Logradouro.value == "" || Logradouro.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Logradouro.focus();
- 					return false;
-				}
-				if( (Tipo_de_Logradouro.value == "" || Tipo_de_Logradouro.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Tipo_de_Logradouro.focus();
- 					return false;
-				}
-				if( (Numero.value == "" || Numero.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Numero.focus();
- 					return false;
-				}
-				if( (Cidade.value == "" || Cidade.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Cidade.focus();
- 					return false;
-				}
-				if( (Estado.value == "" || Estado.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Estado.focus();
- 					return false;
-				}
-				if( (País.value == "" || País.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					País.focus();
- 					return false;
-				}
-				if( (Afiliação.value == "" || Afiliação.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Afiliação.focus();
- 					return false;
-				}
-				if( (Logradouro1.value == "" || Logradouro1.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Logradouro1.focus();
- 					return false;
-				}
-				if( (Tipo_de_Logradouro1.value == "" || Tipo_de_Logradouro1.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Tipo_de_Logradouro1.focus();
- 					return false;
-				}
-				if( (Numero1.value == "" || Numero1.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Numero1.focus();
- 					return false;
-				}
-				if( (Cidade1.value == "" || Cidade1.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Cidade1.focus();
- 					return false;
-				}
-				if( (Estado1.value == "" || Estado1.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					Estado1.focus();
- 					return false;
-				}
-				if( (País1.value == "" || País1.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					País1.focus();
- 					return false;
-				}
-				if( (TipodeAfiliação.value == "" || TipodeAfiliação.value == null) ){
- 					alert('Campos obrigatórios em branco!')
-					TipodeAfiliação.focus();
- 					return false;
-				}
- 				return true;
-			}
-		}
-		
-
-	</script>
+<%@include file="../../_header.jsp"%>
 
 	<body>
 
@@ -95,7 +6,7 @@
 		<div id="formulario">
 		<h2>Inserir Pesquisador</h2>
 
-		<form action="PesquisadorServlet"  method="post" name="thisform" onSubmit="validate_form(thisform);"><input type="hidden" name="comando" value="incluir"/>
+		<form action="PesquisadorServlet"  method="post" name="thisform" onSubmit="validate_form_inserir_pesq(thisform)"><input type="hidden" name="comando" value="incluir"/>
  			Primeiro Nome: <input type="text" name="primeiro_nome"> *<br/>
  			Nome do Meio: <input type="text" name="nome_do_meio"> *<br/> 
  			Ultimo Nome: <input type="text" name="ultimo_nome"> *<br/> 
